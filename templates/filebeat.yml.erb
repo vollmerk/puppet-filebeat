@@ -216,7 +216,7 @@ output.elasticsearch:
     <%- end -%>
     <%- end -%>
 <%- end -%>
-<%- if @filebeat_config['output']['logstash'] != nil or @filebeat_config['output']['logstash'] != false -%>
+<%- if @filebeat_config['output']['logstash'] != nil and @filebeat_config['output']['logstash'].class == Hash -%>
 #----------------------------- Logstash output --------------------------------
 output.logstash:
   <%- if @filebeat_config['output']['logstash']['enabled'] != nil -%>
