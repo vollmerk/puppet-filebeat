@@ -69,10 +69,10 @@ max_procs: <%= @filebeat_config['max_procs'] %>
 
 #================================ Outputs =====================================
 
-<%- if @filebeat_config['output']['elasticsearch'] != nil and @filebeat_config['output']['elasticsearch'] != false -%>
+<%- if @filebeat_config['output']['elasticsearch'] != nil and @filebeat_config['output']['elasticsearch'] != "false" -%>
 #-------------------------- Elasticsearch output ------------------------------
 output.elasticsearch:
-  <%- if @filebeat_config['output']['elasticsearch']['enabled'] != nil and @filebeat_config['output']['elasticsearch']['enabled'] != false -%>
+  <%- if @filebeat_config['output']['elasticsearch']['enabled'] != nil and @filebeat_config['output']['elasticsearch']['enabled'] != "false" -%>
   enabled: <%= @filebeat_config['output']['elasticsearch']['enabled'] %>
   <%- end -%>
   hosts:
@@ -216,7 +216,7 @@ output.elasticsearch:
     <%- end -%>
     <%- end -%>
 <%- end -%>
-<%- if @filebeat_config['output']['logstash'] != nil and @filebeat_config['output']['logstash'] != false -%>
+<%- if @filebeat_config['output']['logstash'] != nil and @filebeat_config['output']['logstash'] != "false" -%>
 #----------------------------- Logstash output --------------------------------
 output.logstash:
   <%- if @filebeat_config['output']['logstash']['enabled'] != nil -%>
