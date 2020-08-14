@@ -61,6 +61,7 @@ class filebeat (
   String  $idle_timeout                                               = $filebeat::params::idle_timeout,
   Boolean $publish_async                                              = $filebeat::params::publish_async,
   String  $config_file                                                = $filebeat::params::config_file,
+  Optional[Boolean] $overwrite_pipelines			      = $filebeat::params::overwrite_pipelines,
   Optional[String] $config_file_owner                                 = $filebeat::params::config_file_owner,
   Optional[String] $config_file_group                                 = $filebeat::params::config_file_group,
   String[4,4]  $config_dir_mode                                       = $filebeat::params::config_dir_mode,

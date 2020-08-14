@@ -6,6 +6,7 @@
 class filebeat::params {
   $service_ensure           = running
   $service_enable           = true
+  $overwrite_pipelines	    = false
   $spool_size               = 2048
   $idle_timeout             = '5s'
   $publish_async            = false

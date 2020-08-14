@@ -19,12 +19,13 @@ class filebeat::config {
 
   if versioncmp($major_version, '6') >= 0 {
     $filebeat_config_temp = delete_undef_values({
-      'shutdown_timeout'  => $filebeat::shutdown_timeout,
-      'name'              => $filebeat::beat_name,
-      'tags'              => $filebeat::tags,
-      'max_procs'         => $filebeat::max_procs,
-      'fields'            => $filebeat::fields,
-      'fields_under_root' => $filebeat::fields_under_root,
+      'shutdown_timeout'    => $filebeat::shutdown_timeout,
+      'name'                => $filebeat::beat_name,
+      'tags'                => $filebeat::tags,
+      'max_procs'           => $filebeat::max_procs,
+      'fields'              => $filebeat::fields,
+      'fields_under_root'   => $filebeat::fields_under_root,
+      'overwrite_pipelines' => $filebeat::overwrite_pipelines,
       'filebeat'          => {
         'config.inputs' => {
           'enabled' => true,
